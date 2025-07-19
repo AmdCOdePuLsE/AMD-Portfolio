@@ -57,13 +57,13 @@ const ExperienceSection = () => {
         <section id="experience" className="w-full md:mt-40 mt-20 section-padding xl:px-0">
             <div className="w-full h-full md:px-20 px-5">
                 <h2 className="text-center text-3xl md:text-5xl font-bold mb-10 flex justify-center flex-wrap">
-                   My Professional Journey
+                    My Professional Journey
                 </h2>
 
                 <div className="mt-32 relative">
                     <div className="relative z-50 xl:space-y-32 space-y-10">
                         {expCards.map((card, index) => (
-                            <div key={card.title} className="exp-card-wrapper flex flex-col xl:flex-row ">
+                            <div key={card.title} className="exp-card-wrapper">
                                 <div className="w-full xl:w-2/6">
                                     <GlowCard card={card} index={index}>
                                         <div>

@@ -81,10 +81,10 @@ const ShowcaseSection = () => {
 
                         <div className="project" ref={(el) => (projectRefs.current[2] = el)}>
                             <div className="image-wrapper bg-[#dce9eb]">
-                                <img src="/images/project3.png" alt="My Portfolio" />
+                                <img src="/images/amdportfimg.png" alt="My Portfolio" />
                             </div>
                             <h2>My Portfolio</h2>
-                            {buttons("https://your-startup-showcase.com", "https://github.com/AmdCOdePuLsE/AMD-Portfolio.git")}
+                            {buttons("https://amd-portfolio-lemon.vercel.app/", "https://github.com/AmdCOdePuLsE/AMD-Portfolio.git")}
                         </div>
                     </div>
                 </div>

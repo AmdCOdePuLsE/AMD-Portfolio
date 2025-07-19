@@ -185,7 +185,7 @@ const expCards = [
         review: "Pursuing Bachelor of Technology in Computer Science & Engineering with specialization in Artificial Intelligence and Machine Learning. Actively exploring cutting-edge technologies such as Web Development, App Development, AI/ML, Blockchain, etc. to build innovative, future-ready solutions.",
         imgPath: "/images/exp1.png",
         logoPath: "/images/education.png",
-        title: "B.Tech in Computer Science & Engineering(Artificial Intelligence & Machine Learning)",
+        title: "B.Tech in Computer Science & Engineering(AI & ML)",
         label: "Education",
         date: "2024 - Present",
         responsibilities: [
