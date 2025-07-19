@@ -1,13 +1,12 @@
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState, useEffect } from 'react';
 import TitleHeader from "../components/TitleHeader.jsx";
 import ContactExperience from "../components/Models/Contact/ContactExperience.jsx";
-
-import emailjs from '@emailjs/browser'
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-
     const formRef = useRef(null);
     const [loading, setLoading] = useState(false);
+    const [isFormValid, setIsFormValid] = useState(false);
     const [form, setForm] = useState({
         name: "",
         email: "",
@@ -16,12 +15,20 @@ const Contact = () => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setForm({ ...form, [name]: value });
+        setForm((prevForm) => ({
+            ...prevForm,
+            [name]: value,
+        }));
     };
+
+    useEffect(() => {
+        const isValid = form.name.trim() && form.email.trim() && form.message.trim();
+        setIsFormValid(isValid);
+    }, [form]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true); // Show loading state
+        setLoading(true);
 
         try {
             await emailjs.sendForm(
@@ -31,12 +38,11 @@ const Contact = () => {
                 import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
             );
 
-            // Reset form and stop loading
             setForm({ name: "", email: "", message: "" });
         } catch (error) {
-            console.error("EmailJS Error:", error); // Optional: show toast
+            console.error("EmailJS Error:", error);
         } finally {
-            setLoading(false); // Always stop loading, even on error
+            setLoading(false);
         }
     };
 
@@ -52,7 +58,7 @@ const Contact = () => {
                         <div className="flex-center card-border rounded-xl p-10">
                             <form
                                 ref={formRef}
-                                onSubmit = {handleSubmit}
+                                onSubmit={handleSubmit}
                                 className="w-full flex flex-col gap-7"
                             >
                                 <div>
@@ -94,20 +100,19 @@ const Contact = () => {
                                     />
                                 </div>
 
-                                <button type="submit" disabled={loading}>
-                                    <div className="cta-button group">
-                                        <div className="bg-circle" />
-                                        <p className="text">
-                                            {loading ? "Sending..." : "Send Message"}
-                                        </p>
-                                        <div className="arrow-wrapper">
-                                            <img src="/images/arrow-down.svg" alt="arrow" />
-                                        </div>
-                                    </div>
+                                <button
+                                    type="submit"
+                                    disabled={loading || !isFormValid}
+                                    className={`cta-button group ${(!isFormValid || loading) ? 'opacity-50 cursor-not-allowed' : ''}`}
+                                >
+                                    <p className="text">
+                                        {loading ? "Sending..." : "Send Message"}
+                                    </p>
                                 </button>
                             </form>
                         </div>
                     </div>
+
                     <div className="xl:col-span-7 min-h-96">
                         <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
                             <ContactExperience />
@@ -119,5 +124,4 @@ const Contact = () => {
     );
 };
 
-export default Contact
-
+export default Contact;
