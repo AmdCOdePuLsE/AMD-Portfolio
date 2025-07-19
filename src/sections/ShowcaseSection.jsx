@@ -1,0 +1,151 @@
+import React, { useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const ShowcaseSection = () => {
+    const sectionRef = useRef(null);
+    const project1Ref = useRef(null);
+    const project2Ref = useRef(null);
+    const project3Ref = useRef(null);
+
+    useGSAP(() => {
+        const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
+
+        projects.forEach((card, index) => {
+            gsap.fromTo(
+                card,
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    delay: 0.2 * (index + 1),
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top bottom-=100',
+                    }
+                }
+            );
+        });
+
+        gsap.fromTo(
+            sectionRef.current,
+            { opacity: 0 },
+            { opacity: 1, duration: 1.5 }
+        );
+    }, []);
+
+    const buttons = (projectUrl, githubUrl) => (
+        <div className="flex gap-4 mt-5">
+            {/* View Project */}
+            <a
+                href={projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-medium text-white transition duration-300 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg shadow-lg hover:scale-105"
+            >
+                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-black group-hover:translate-x-0 ease">
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" strokeWidth="2"
+                         viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round"
+                              d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                    </svg>
+                    Open
+                </span>
+                <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">
+                    View Project
+                </span>
+                <span className="relative invisible">View Project</span>
+            </a>
+
+            {/* GitHub Button */}
+            <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-3 rounded-full bg-white shadow-md transition duration-500 hover:scale-110 hover:bg-black"
+            >
+                <img
+                    src="/images/github_scs.svg"
+                    alt="GitHub"
+                    className="w-7 h-7 transition duration-300 group-hover:invert"
+                />
+            </a>
+        </div>
+    );
+
+    return (
+        <section id="work" ref={sectionRef} className="app-showcase">
+            <div className="w-full">
+                <div className="showcaselayout">
+                    {/* LEFT SIDE */}
+                    <div className="first-project-wrapper" ref={project1Ref}>
+                        <div className="image-wrapper">
+                            <img src="/images/WRev_4.png" alt="WeRev" />
+                        </div>
+                        <div className="text-content">
+                            <h2>WRev - An AI powered Respiratory Healthcare Monitoring System</h2>
+                            <p className="text-white-50 md:text-xl">
+                                AI/ML combined with IOT to provide accurate and genuine respiratory healthcare solutions.
+                            </p>
+                            {buttons("https://your-ryde-demo.com", "https://github.com/Debsmit16/WRev")}
+                        </div>
+                    </div>
+
+                    {/* RIGHT SIDE */}
+                    <div className="project-list-wrapper">
+                        <div className="project" ref={project2Ref}>
+                            <div className="image-wrapper bg-[#ffefdb]">
+                                <img src="/images/ARTHA.png" alt="Library Management Platform" />
+                            </div>
+                            <h2>ARTHA - Your Personal Financial Assistant</h2>
+                            {buttons("https://project-artha.vercel.app/", "https://github.com/Rexosaury/Project_Artha")}
+                        </div>
+
+                        <div className="project" ref={project3Ref}>
+                            <div className="image-wrapper bg-[#dce9eb]">
+                                <img src="/images/project3.png" alt="YC Directory - A Startup Showcase App" />
+                            </div>
+                            <h2>My Portfolio</h2>
+                            {buttons("https://your-startup-showcase.com", "https://github.com/your-github/startup-directory")}
+                        </div>
+                    </div>
+                </div>
+
+                {/* GitHub Profile Button */}
+                <div className="flex justify-center mt-20">
+                    <a
+                        href="https://github.com/AmdCOdePuLsE"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group relative flex items-center justify-center bg-gradient-to-br from-[#ff1a1a] via-[#800000] to-[#0d0d0d] text-white font-semibold px-6 py-3 rounded-xl transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] hover:w-16 hover:h-16 hover:rounded-full hover:px-0 hover:py-0 hover:shadow-[0_0_25px_#ff1a1a] overflow-hidden"
+                    >
+                        {/* Glowing pulse background */}
+                        <span className="absolute -inset-1 bg-gradient-to-br from-[#ff4c4c] via-[#800000] to-[#1a1a1a] opacity-30 blur-xl z-0 rounded-xl group-hover:rounded-full animate-pulse transition-all duration-700 ease-in-out" />
+
+                        {/* Button Text: Hidden on hover */}
+                        <span className="z-10 transition-all duration-500 ease-in-out group-hover:opacity-0 group-hover:scale-0">
+      Visit My GitHub
+    </span>
+
+                        {/* GitHub Icon: Visible only on hover */}
+                        <img
+                            src="/images/github_scs.svg"
+                            alt="GitHub"
+                            className="w-7 h-7 absolute opacity-0 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 ease-in-out invert z-10"
+                        />
+                    </a>
+                </div>
+
+
+
+
+            </div>
+        </section>
+    );
+};
+
+export default ShowcaseSection;
