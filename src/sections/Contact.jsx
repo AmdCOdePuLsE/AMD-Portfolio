@@ -19,7 +19,7 @@ const Contact = () => {
         setForm({ ...form, [name]: value });
     };
 
-     const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true); // Show loading state
 

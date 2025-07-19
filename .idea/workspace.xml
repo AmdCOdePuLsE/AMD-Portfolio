@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd736261-24ed-49a8-a5df-acaddba1211f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/sections/ShowcaseSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/ShowcaseSection.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/AboutMe.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/AboutMe.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/Contact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/Contact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/CreativeExpertise.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/CreativeExpertise.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sections/ExperienceSection.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/sections/ExperienceSection.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +86,7 @@
       <workItem from="1751901226107" duration="62962000" />
       <workItem from="1752231279703" duration="31045000" />
       <workItem from="1752426259548" duration="29344000" />
-      <workItem from="1752784772120" duration="23044000" />
+      <workItem from="1752784772120" duration="30024000" />
     </task>
     <servers />
   </component>
@@ -89,9 +94,19 @@
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="a4dafad1-02b1-416d-9c48-707cd2cf920b" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="a4dafad1-02b1-416d-9c48-707cd2cf920b">
           <value>
             <State />
           </value>

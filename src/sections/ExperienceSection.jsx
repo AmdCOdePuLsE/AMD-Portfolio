@@ -19,7 +19,8 @@ const ExperienceSection = () => {
                 ease: 'power2.inOut',
                 scrollTrigger: {
                     trigger: card,
-                    start: 'top 80%'
+                    start: 'top 80%',
+                    toggleActions: 'play none none none', // disables replay
                 }
             });
         });
@@ -64,7 +65,7 @@ const ExperienceSection = () => {
                     <div className="relative z-50 xl:space-y-32 space-y-10">
                         {expCards.map((card, index) => (
                             <div key={card.title} className="exp-card-wrapper">
-                                <div className="xl:w-2/6">
+                                <div className="w-full xl:w-2/6">
                                     <GlowCard card={card} index={index}>
                                         <div>
                                             {/*<img src={card.imgPath} alt={card.title} />*/}
@@ -72,7 +73,7 @@ const ExperienceSection = () => {
                                     </GlowCard>
                                 </div>
 
-                                <div className="xl:w-4/6">
+                                <div className="w-full xl:w-4/6">
                                     <div className="flex items-start">
                                         <div className="timeline-wrapper">
                                             <div className="timeline" />

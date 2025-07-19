@@ -14,7 +14,8 @@ const PhotoItem = ({ photo }) => (
         <img
             src={photo.imgPath}
             alt={photo.name}
-            className="w-36 md:w-256 h-36 md:h-60 object-cover rounded-xl border border-white/10 shadow-lg transition-transform duration-500 hover:scale-110"
+            loading="lazy"
+            className="w-36 md:w-256 h-36 md:h-60 object-cover rounded-xl border border-white/10 shadow-lg transition-transform duration-500 hover:scale-110 will-change-transform"
         />
     </div>
 );
