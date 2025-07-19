@@ -91,7 +91,7 @@ const ShowcaseSection = () => {
                             <p className="text-white-50 md:text-xl">
                                 AI/ML combined with IOT to provide accurate and genuine respiratory healthcare solutions.
                             </p>
-                            {buttons("https://your-ryde-demo.com", "https://github.com/Debsmit16/WRev")}
+                            {buttons("https://w-rev.vercel.app/", "https://github.com/Debsmit16/WRev")}
                         </div>
                     </div>
 
@@ -99,7 +99,7 @@ const ShowcaseSection = () => {
                     <div className="project-list-wrapper">
                         <div className="project" ref={project2Ref}>
                             <div className="image-wrapper bg-[#ffefdb]">
-                                <img src="/images/ARTHA.png" alt="Library Management Platform" />
+                                <img src="/images/ARTHA.png" alt="Financial Assistant" />
                             </div>
                             <h2>ARTHA - Your Personal Financial Assistant</h2>
                             {buttons("https://project-artha.vercel.app/", "https://github.com/Rexosaury/Project_Artha")}
@@ -107,10 +107,10 @@ const ShowcaseSection = () => {
 
                         <div className="project" ref={project3Ref}>
                             <div className="image-wrapper bg-[#dce9eb]">
-                                <img src="/images/project3.png" alt="YC Directory - A Startup Showcase App" />
+                                <img src="/images/project3.png" alt="My Portfolio" />
                             </div>
                             <h2>My Portfolio</h2>
-                            {buttons("https://your-startup-showcase.com", "https://github.com/your-github/startup-directory")}
+                            {buttons("https://your-startup-showcase.com", "https://github.com/AmdCOdePuLsE/AMD-Portfolio.git")}
                         </div>
                     </div>
                 </div>
