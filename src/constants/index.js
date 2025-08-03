@@ -206,7 +206,7 @@ const expCards = [
             "Created over 50+ visual content for brands and social media influencers",
             "Participated in 20+ global photography competitions",
             "Designed 200+ graphics for different brands and companies",
-            "Specialized in potraits, street photography, event photography and documentries",
+            "Specialized in potraits, street photography, event photography and documentaries",
             "Worked with 50+ brands for their product photoshoots",
         ],
     },
