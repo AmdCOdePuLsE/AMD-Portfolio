@@ -98,7 +98,7 @@ const AboutMe = () => {
                         <div className="mt-10 flex flex-col md:hidden lg:flex lg:flex-row gap-5 w-full max-w-md will-change-transform">
                             {/* === Download CV Button === */}
                             <a
-                                href="https://example.com/your-cv.pdf"
+                                href="https://drive.google.com/drive/folders/1vuYJBqXOCdbHpdc-J_HcRJ8IuS5VQM3A"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="cta-button group w-full relative overflow-hidden transition-all duration-500"
